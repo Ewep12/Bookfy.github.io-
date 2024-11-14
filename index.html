@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookfy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<head>
+    <!-- Link para Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Bookfy</h1>
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produtos.html">Livros</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>            
+             <!-- Contêiner para os botões -->
+            <div class="buttons-container">
+                <!-- Botão Login -->
+                <button id="loginBtn">Entrar</button>
+                <!-- Botão Cadastro -->
+                <button id="registerBtn">Cadastrar</button>
+            </div>
+        </nav>
+      <button id="toggleDarkMode">🌙</button>
+    </header>
+
+<!-- Modal de login -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeLoginModal">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Entrar</button>
+        </form>
+        <div class="modal-links">
+            <p>Esqueceu a sua senha? <a href="#" id="forgotPasswordLink">Recupere aqui</a></p>
+            <p>Novo por aqui? <a href="#" id="registerLink">Cadastre-se</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Cadastro -->
+<div id="registerPage" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeRegisterModal">&times;</span>
+        <h2>Cadastro</h2>
+        <form id="registerForm">
+            <label for="username">Nome de Usuário:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirmar Senha:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <button type="submit">Cadastrar</button>
+            <div class="modal-links">
+                <p>Já tem uma conta? <a href="#" id="loginLink">Entre aqui</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--Modal recuperar senha-->
+<div id="forgotPasswordModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeForgotPasswordModal">&times;</span>
+        <h2>Recuperar Senha</h2>
+        <form id="forgotPasswordLinkForm">
+            <label for="emailRecovery">Digite seu e-mail:</label>
+            <input type="email" id="emailRecovery" name="emailRecovery" required>
+            <button type="submit">Enviar Link de Recuperação</button>
+        </form>
+    </div>
+</div>
+
+    <main>
+        <!-- Seção de Início com Banner Rotativo e Texto ao Lado -->
+        <section id="inicio" class="banner-texto">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <div class="carousel-slide" onclick="openBookModal('O livro das virtudes para crianças', ' William Bennett', 69.90, 54.00, 'O livro das virtudes para crianças é uma jornada mágica e inspiradora que reúne pais e filhos em uma aventura de valores e ensinamentos intemporais.')">
+                        <img src="https://m.media-amazon.com/images/I/51Qp3GPT7qL._SR240,220_.jpg" alt="banner 1"></div>
+                    <div class="carousel-slide" onclick="openBookModal('#umdiasemreclamar: Descubra por que a gratidão pode mudar a sua vida', 'Davi Lago', 49.90, 19.90, 'Quantas vezes você reclamou de algo hoje? Já parou pra pensar como é difícil ser grato e como focamos muito mais a nossa atenção nos problemas e não nas soluções?Este livro lhe propõe o seguinte desafio: passe um dia (24 horas) sem reclamar. Para realizá-lo, você precisará registrar o horário em que iniciará o exercício. E não será preciso registrar quantas vezes você viola seu comando porque, a cada vez que você o fizer, deverá reiniciar a contagem do tempo.')">   
+                        <img src="https://m.media-amazon.com/images/I/41+LUvzc6WL._SR480,440_.jpg" alt="banner 2"></div>
+                    <div class="carousel-slide" onclick="openBookModal('Como fazer amigos e influenciar pessoas', 'Dale Carnegie', 59.90, 28.00, 'Um dos maiores clássicos de todos os tempos, Como fazer amigos e influenciar pessoas é considerado a Bíblia dos relacionamentos interpessoais.')">
+                        <img src="https://m.media-amazon.com/images/I/41RTbO7BvbL._SR480,440_.jpg" alt="banner 3"></div>
+                    <div class="carousel-slide" onclick="openBookModal('A empregada: Bem-vinda à família', 'Freida McFadden', 59.90, 25.44, 'STodos os dias, Millie limpa a casa de Nina e Andrew Winchester de cima a baixo. Pega a filha deles na escola. Prepara refeições deliciosas para a família toda antes de poder se recolher e enfim comer o próprio jantar, sozinha em seu quarto minúsculo e claustrofóbico no sótão.')">
+                        <img src="https://m.media-amazon.com/images/I/41ziC4vXKBL._SY445_SX342_.jpg" alt="banner 4"></div>
+                    <div class="carousel-slide" onclick="openBookModal('Confissões de Santo Agostinho', ' Agostinho de Hipona', 59.90, 33.16, 'Neste livro autobiográfico, Santo Agostinho registrou suas reflexões, cujo propósito é aproximar as pessoas de Deus, assim como ele próprio foi convertido do maniqueísmo - a doutrina que postula um conflito entre o reino da luz e o das sombras - para o cristianismo.As conclusões às quais Santo Agostinho chegou têm relevância para as aspirações espirituais tanto de homens quanto de mulheres nos dias atuais.')">
+                        <img src="https://m.media-amazon.com/images/I/51Q7-15CoVL._SY445_SX342_.jpg" alt="banner 5"></div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+<div id="bookModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle">Título do Livro:</h2>
+        <p id="modalAuthor">Autor:</p>
+        <p id="modalOriginalPrice">Preço Original:</p>
+        <p id="modalDiscountedPrice">Preço com desconto:</p>
+        <p id="modalDiscount">Desconto:</p>
+        <p id="modalSynopsis">Sinopse:</p>
+    </div>
+</div>
+               <!-- Setas de Navegação -->
+        <span id="prevSlide" class="carousel-nav prev">&#10094;</span>
+        <span id="nextSlide" class="carousel-nav next">&#10095;</span>
+        
+            <div id="slideIndicator" class="slide-indicator"></div>
+            
+            <div class="texto-container">
+                <h2>Livros em ofertas e muito mais</h2>
+                <p>Visamos ajudar a todos para achar o livro que você procura</p>
+                <p>compartilhando assim os links que você precisa para ir até o livro.</p>
+                <p>Aproveite!</p>
+            </div>
+        </section>    
+    </main>
+    
+    <!-- Botão Ver Mais -->
+<div style="text-align: center; margin-top: 20px;">
+    <a href="produtos.html">
+        <button>
+            Ver Mais
+        </button>
+    </a>
+</div>
+
+</section>
+                                                                                        
+    <!-- Rodapé -->
+    <footer>
+        <div class="share-buttons">
+            <h3>Compartilhe este conteúdo</h3>
+            
+            <!-- Botão para Facebook -->
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.seusite.com" target="_blank">
+                <i class="fab fa-facebook-square share-icon"></i>
+            </a>
+        
+            <!-- Botão para X -->
+        <a href="https://x.com/intent/tweet?url=https://www.seusite.com&text=Olha%20isso!" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </a>
+        
+            <!-- Botão para WhatsApp -->
+            <a href="https://api.whatsapp.com/send?text=Olha%20isso!%20https://www.seusite.com" target="_blank">
+                <i class="fab fa-whatsapp share-icon"></i>
+            </a>
+        
+            <!-- Botão para LinkedIn -->
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.seusite.com&title=Confira%20este%20site" target="_blank">
+                <i class="fab fa-linkedin share-icon"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 Bookfy. Todos os direitos reservados.</p>
+    </footer>
+        <script src="script.js"></script> <!-- Referência ao arquivo JS externo -->
+</body>
+</html>

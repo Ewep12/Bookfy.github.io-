@@ -1,0 +1,573 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte padrão */
+    margin: 0; /* Remove a margem padrão */
+    padding: 0; /* Remove o padding padrão */
+    background-color: #f3f3f3; /* Define a cor de fundo do corpo */
+}
+
+/* Cabeçalho */
+header {
+    background-color: #232f3e; /* Cor de fundo do cabeçalho */
+    color: white; /* Cor do texto no cabeçalho */
+    padding: 30px; /* Define o padding do cabeçalho */
+    text-align: center; /* Centraliza o conteúdo no cabeçalho */
+}
+
+/* Estilos gerais para a lista do menu */
+.menu {
+    list-style-type: none; /* Remove os marcadores da lista */
+    display: flex; /* Exibe os itens em linha */
+    gap: 20px; /* Define o espaçamento entre os itens */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+    justify-content: center; /* Centraliza o menu na horizontal */
+    background-color: #232f3e; /* Cor de fundo do menu */
+    padding: 15px; /* Define o padding do menu */
+}
+
+/* Estilos para os links no menu */
+.menu a {
+    color: white; /* Cor do texto dos links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-size: 16px; /* Define o tamanho da fonte dos links */
+    font-weight: bold; /* Deixa a fonte em negrito */
+    padding: 8px 15px; /* Define o padding interno dos links */
+    border-radius: 4px; /* Arredonda as bordas dos links */
+    transition: color 0.3s ease, transform 0.3s ease; /* Adiciona uma transição suave para o hover */
+    cursor: pointer; /* Muda o cursor para indicar um link */
+}
+
+.menu a:hover {
+    color: #ff6a00; /* Muda a cor do link no hover */
+    transform: scale(1.1); /* Aumenta ligeiramente o link no hover */
+}
+
+.menu a:focus {
+    outline: none; /* Remove o contorno do foco padrão */
+}
+
+/* Contêiner para os botões */
+.buttons-container {
+    position: absolute; /* Define a posição como absoluta */
+    top: 20px; /* Define a distância do topo */
+    right: 20px; /* Define a distância do lado direito */
+    display: flex; /* Exibe os botões em linha */
+    gap: 10px; /* Define o espaçamento entre os botões */
+}
+
+/* Botões */
+button {
+    padding: 10px 20px; /* Define o padding interno do botão */
+    background-color: #ff6a00; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Arredonda as bordas do botão */
+    font-size: 16px; /* Define o tamanho da fonte do botão */
+    font-weight: bold; /* Deixa a fonte do botão em negrito */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Adiciona uma transição suave no hover */
+}
+
+button:hover {
+    background-color: #e65c00; /* Muda a cor de fundo do botão no hover */
+    transform: scale(1.05); /* Aumenta ligeiramente o botão no hover */
+}
+
+button:active {
+    transform: scale(0.95); /* Diminui ligeiramente o botão ao clicar */
+}
+
+/* Estilos principais */
+main {
+    padding: 20px; /* Define o padding interno principal */
+}
+
+/* Ofertas */
+#offers-section {
+    padding: 20px; /* Define o padding interno da seção */
+    text-align: center; /* Centraliza o conteúdo */
+    position: relative; /* Define posição relativa */
+    padding-bottom: 50px; /* Adiciona espaço extra na parte inferior */
+}
+
+#offers-section h2 {
+    font-size: 28px; /* Define o tamanho da fonte do título */
+    margin-bottom: 20px; /* Define o espaçamento inferior do título */
+    color: #232f3e; /* Define a cor do título */
+}
+
+#offers {
+    display: flex; /* Exibe os itens em linha */
+    gap: 20px; /* Define o espaçamento entre os itens */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+    justify-content: center; /* Centraliza os itens */
+}
+
+.book {
+    background: white; /* Cor de fundo dos itens */
+    padding: 10px; /* Define o padding interno dos itens */
+    border: 1px solid #ddd; /* Define uma borda sutil */
+    width: 200px; /* Define a largura fixa dos itens */
+    text-align: center; /* Centraliza o texto dos itens */
+    cursor: pointer; /* Muda o cursor ao passar sobre os itens */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave no hover */
+}
+
+.book:hover {
+    transform: scale(1.10); /* Aumenta ligeiramente o item no hover */
+}
+
+.book-cover {
+    width: 100%; /* Largura total da capa do item */
+    height: auto; /* Altura automática para manter a proporção */
+}
+
+.discount {
+    color: red; /* Cor do texto de desconto */
+    font-weight: bold; /* Deixa o texto em negrito */
+    margin-top: 5px; /* Define a margem superior */
+}
+
+.price {
+    margin: 10px 0; /* Define a margem superior e inferior */
+}
+
+.price .original {
+    text-decoration: line-through; /* Adiciona uma linha sobre o texto */
+    color: #888; /* Define a cor do texto */
+}
+
+/* Estilos para o Modal */
+.modal {
+    display: none; /* Modal escondido por padrão */
+    justify-content: center; /* Centraliza o modal horizontalmente */
+    align-items: center; /* Centraliza o modal verticalmente */
+    position: fixed; /* Define posição fixa */
+    top: 0; /* Posiciona o modal no topo da tela */
+    left: 0; /* Posiciona o modal no canto esquerdo */
+    width: 100%; /* Largura total da tela */
+    height: 100%; /* Altura total da tela */
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo escurecido com transparência */
+    z-index: 1; /* Coloca o modal acima de outros elementos */
+}
+
+.modal-content {
+    background: white; /* Cor de fundo do conteúdo do modal */
+    padding: 20px; /* Define o padding interno */
+    max-width: 90%; /* Largura máxima do modal */
+    width: 400px; /* Largura fixa do modal */
+    border-radius: 5px; /* Arredonda as bordas */
+    position: relative; /* Define posição relativa */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra ao modal */
+}
+
+.modal-content p span {
+    font-weight: bold; /* Texto em negrito */
+    color: #555; /* Cor do texto */
+}
+
+.modal-content p {
+    margin: 8px 0; /* Define a margem superior e inferior */
+}
+
+/* Estilo do formulário */
+form {
+    display: flex; /* Exibe os itens em linha */
+    flex-direction: column; /* Exibe os itens em coluna */
+    gap: 10px; /* Define o espaçamento entre os itens */
+}
+
+input {
+    padding: 8px; /* Define o padding interno dos inputs */
+    margin: 5px 0; /* Define a margem superior e inferior dos inputs */
+    border: 1px solid #ddd; /* Define uma borda sutil */
+    border-radius: 4px; /* Arredonda as bordas dos inputs */
+}
+
+button {
+    padding: 10px; /* Define o padding interno dos botões */
+    background-color: #ff6a00; /* Cor de fundo dos botões */
+    color: white; /* Cor do texto dos botões */
+    border: none; /* Remove a borda padrão */
+    border-radius: 4px; /* Arredonda as bordas dos botões */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+}
+
+button:hover {
+    background-color: #e65c00; /* Muda a cor do botão no hover */
+}
+
+/* Links no modal */
+.modal-links p {
+    text-align: center; /* Centraliza o texto */
+    margin-top: 10px; /* Define o espaçamento superior */
+}
+
+.modal-links a {
+    color: #ff6a00; /* Cor dos links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+.modal-links a:hover {
+    text-decoration: underline; /* Sublinha o link no hover */
+}
+
+/* Carrossel do Banner */
+.banner-rotativo {
+    width: 100%; /* Define a largura do carrossel */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa o contêiner */
+    position: relative; /* Define posição relativa */
+    max-height: 400px; /* Altura máxima do carrossel */
+}
+
+.carousel {
+    display: flex; /* Exibe os itens em linha */
+    position: relative; /* Define posição relativa */
+    width: 100%; /* Largura total do carrossel */
+}
+
+.carousel-slide {
+    display: flex; /* Exibe os itens em linha */
+    transition: transform 0.5s ease; /* Adiciona uma transição suave na rotação */
+    cursor: pointer;
+}
+
+.carousel-slide img {
+    width: 100%; /* Largura total da imagem */
+    height: 100%; /* Altura total da imagem */
+    object-fit: cover; /* Cobre o contêiner completamente */
+    max-height: 400px; /* Altura máxima da imagem */
+}
+
+/* Container principal do banner */
+.carousel-container {
+    width: 300px; /* Largura do contêiner do banner */
+    max-width: 400px; /* Largura máxima do contêiner */
+    height: 400px; /* Altura fixa do contêiner */
+    margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa */
+    position: relative; /* Define posição relativa */
+}
+
+.carousel-slide {
+    display: flex; /* Exibe os itens em linha */
+    transition: transform 0.5s ease-in-out; /* Transição suave na rotação */
+    width: 300px; /* Largura fixa do carrossel */
+}
+
+.carousel-slide div {
+    min-width: 100%; /* Largura mínima do slide */
+}
+
+.carousel-slide img {
+    width: 300px; /* Largura da imagem */
+    height: 500px; /* Altura da imagem */
+    object-fit: cover; /* Cobre o contêiner completamente */
+    object-position: center; /* Centraliza o conteúdo da imagem */
+}
+
+/* Texto ao lado do banner */
+.texto-container {
+    flex: 1; /* Expande o conteúdo para ocupar o espaço disponível */
+    text-align: center; /* Centraliza o texto */
+    display: flex; /* Exibe os itens em linha */
+    flex-direction: column; /* Exibe os itens em coluna */
+    justify-content: center; /* Centraliza os itens verticalmente */
+}
+
+.texto-container h2 {
+    font-size: 24px; /* Define o tamanho da fonte do título */
+    margin-bottom: 10px; /* Define o espaçamento inferior do título */
+}
+
+.texto-container p {
+    margin-bottom: 10px; /* Define o espaçamento inferior do parágrafo */
+}
+
+.texto-container button {
+    padding: 10px 20px; /* Define o padding interno do botão */
+    background-color: #ff6a00; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    font-size: 16px; /* Define o tamanho da fonte */
+}
+
+/* Botões de navegação do carrossel */
+button.prev, button.next {
+    position: absolute; /* Define posição absoluta */
+    top: 50%; /* Centraliza o botão verticalmente */
+    transform: translateY(-50%); /* Ajusta o botão para o centro vertical */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão */
+    font-size: 2em; /* Define o tamanho da fonte */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    z-index: 100; /* Garante que o botão fique sobreposto */
+}
+
+button.prev {
+    left: 10px; /* Posiciona o botão à esquerda */
+}
+
+button.next {
+    right: 10px; /* Posiciona o botão à direita */
+}
+
+/* Rodapé */
+footer {
+    background-color: #1e2a38; /* Cor de fundo do rodapé */
+    color: white; /* Cor do texto do rodapé */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Define o padding interno do rodapé */
+    font-size: 14px; /* Define o tamanho da fonte do rodapé */
+    margin-top: 20px; /* Define o espaçamento superior */
+}
+
+footer p {
+    margin: 0; /* Remove a margem padrão */
+}
+
+.share-buttons {
+    margin-top: 20px; /* Define o espaçamento superior */
+}
+
+.share-icon {
+    font-size: 30px; /* Define o tamanho da fonte dos ícones */
+    margin: 10px; /* Define a margem ao redor dos ícones */
+    color: #ffffff; /* Define a cor dos ícones */
+    transition: opacity 0.3s ease; /* Adiciona uma transição suave no hover */
+}
+
+.share-icon:hover {
+    opacity: 0.8; /* Reduz a opacidade no hover */
+}
+
+/* Seção de Contato */
+#contato {
+    background-color: #e9ecef; /* Define a cor de fundo */
+    padding: 30px 5px; /* Define o padding interno */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 10px; /* Define o espaçamento superior */
+}
+
+#contato h2 {
+    font-size: 24px; /* Define o tamanho da fonte do título */
+    color: #333; /* Define a cor do título */
+    margin-bottom: 20px; /* Define o espaçamento inferior */
+}
+
+#contato p {
+    font-size: 16px; /* Define o tamanho da fonte do parágrafo */
+    color: #666; /* Define a cor do parágrafo */
+    margin-bottom: 20px; /* Define o espaçamento inferior */
+}
+
+.contact-form {
+    display: flex; /* Exibe os itens em linha */
+    flex-direction: column; /* Exibe os itens em coluna */
+    align-items: center; /* Centraliza os itens */
+    gap: 15px; /* Define o espaçamento entre os itens */
+    max-width: 500px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centraliza o formulário horizontalmente */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* Largura total dos campos */
+    padding: 10px; /* Define o padding interno */
+    border: 1px solid #ddd; /* Define uma borda sutil */
+    border-radius: 4px; /* Arredonda as bordas dos campos */
+    font-size: 16px; /* Define o tamanho da fonte */
+    resize: none; /* Desativa o redimensionamento */
+}
+
+.contact-form button {
+    padding: 10px 20px; /* Define o padding interno do botão */
+    background-color: #1e2a38; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    font-size: 16px; /* Define o tamanho da fonte */
+}
+
+.contact-form button:hover {
+    background-color: #ff6a00; /* Muda a cor do botão no hover */
+}
+
+.menu li a, .buttons-container button {
+    color: rgb(255, 255, 255);
+    transition: color 0.3s, background-color 0.3s;
+}
+
+/* Estilos para o modo escuro */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark-mode .navbar {
+    background-color: #333;
+}
+
+body.dark-mode .menu li a, 
+body.dark-mode .buttons-container button {
+    color: white;
+}
+
+body.dark-mode #toggleDarkMode {
+    background-color: #444;
+    color: white;
+}
+
+body.dark-mode button {
+    background-color: #555; /* Nova cor de fundo para o modo escuro */
+    color: #f1f1f1; /* Nova cor de texto para o modo escuro */
+}
+
+body.dark-mode button:hover {
+    background-color: #666; /* Cor de fundo no hover no modo escuro */
+}
+
+/* Modo escuro para o modal */
+body.dark-mode .modal-content {
+    background-color: #333;
+    color: #f1f1f1;
+}
+
+body.dark-mode .close {
+    color: #f1f1f1;
+}
+
+/* Estilo padrão */
+.modal-content p span {
+    font-weight: bold; /* Texto em negrito */
+    color: #555; /* Cor do texto */
+}
+
+/* Modo escuro */
+body.dark-mode .modal-content p span {
+    color: #f1f1f1; /* Texto branco no modo escuro */
+}
+
+body.dark-mode .book {
+    background: #333; /* Fundo escuro no modo escuro */
+    border: 1px solid #555; /* Borda mais escura no modo escuro */
+    color: #f1f1f1; /* Cor do texto clara no modo escuro */
+}
+
+.slide-indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.slide-indicator .dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.slide-indicator .active {
+    background-color: #333; /* Cor da bolinha ativa */
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo para o botão de Dark Mode */
+#toggleDarkMode {
+    position: fixed; /* Fixa o botão na tela */
+    top: 10px;       /* Distância do topo */
+    left: 10px;      /* Distância da esquerda */
+    z-index: 1000;   /* Garante que o botão fique sobre outros elementos */
+    background-color: #fff; /* Cor do botão */
+    padding: 10px 15px; /* Padding para dar um pouco de espaço interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro para interatividade */
+    transition: background-color 0.3s; /* Transição suave de cor */
+}
+
+body.dark-mode #toggleDarkMode {
+    background-color: #333; /* Cor de fundo do botão no modo escuro */
+    color: white; /* Cor do texto no modo escuro */
+}
+
+/* Efeito de hover para o botão */
+#toggleDarkMode:hover {
+    background-color: #444; /* Cor mais escura ao passar o mouse */
+}
+
+#prevSlide {
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+#nextSlide {
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+/* Indicadores de Slide */
+#slideIndicator {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#slideIndicator .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+#slideIndicator .dot.active {
+    background-color: #717171;
+}
+
+/* Setas de Navegação */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+    color: rgb(12, 12, 12);
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+body.dark-mode .carousel-nav {
+    color: #fff;
+}
+
+body.dark-mode 
+#offers-section h2 {
+    color: #ddd;
+}
+
+body.dark-mode .contact-form{
+    color: #121212;
+}

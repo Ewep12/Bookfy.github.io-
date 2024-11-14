@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookfy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<head>
+    <!-- Link para Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Bookfy</h1>
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produtos.html">Livros</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>            
+             <!-- Contêiner para os botões -->
+            <div class="buttons-container">
+                <!-- Botão Login -->
+                <button id="loginBtn">Entrar</button>
+                <!-- Botão Cadastro -->
+                <button id="registerBtn">Cadastrar</button>
+            </div>
+        </nav>
+    </select> 
+    <button id="toggleDarkMode">🌙</button>
+    </header>
+
+<!-- Modal de login -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeLoginModal">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Entrar</button>
+        </form>
+        <div class="modal-links">
+            <p>Esqueceu a sua senha? <a href="#" id="forgotPasswordLink">Recupere aqui</a></p>
+            <p>Novo por aqui? <a href="#" id="registerLink">Cadastre-se</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Cadastro -->
+<div id="registerPage" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeRegisterModal">&times;</span>
+        <h2>Cadastro</h2>
+        <form id="registerForm">
+            <label for="username">Nome de Usuário:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirmar Senha:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+        <div class="modal-links">
+            <p>Já tem uma conta? <a href="#" id="loginLink">Entre aqui</a></p>
+        </div>
+    </div>
+</div>
+
+<!--Modal recuperar senha-->
+<div id="forgotPasswordModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeForgotPasswordModal">&times;</span>
+        <h2>Recuperar Senha</h2>
+        <form id="forgotPasswordLinkForm">
+            <label for="emailRecovery">Digite seu e-mail:</label>
+            <input type="email" id="emailRecovery" name="emailRecovery" required>
+            <button type="submit">Enviar Link de Recuperação</button>
+        </form>
+    </div>
+</div>
+
+    <main>
+<!-- Seção de Ofertas de Livros -->
+<section id="offers-section">
+    <h2>OFERTAS</h2>
+<div id="offers">
+    <div class="book" onclick="openBookModal('Em Agosto Nos Vemos', 'Gabriel García Márquez', 64.90, 44.83, 'Todo mês de agosto, Ana Magdalena Bach pega uma barca para uma ilha caribenha a fim de colocar um ramo de gladíolos no túmulo de sua mãe. Todos os anos, ela se hospeda em um hotel e, antes de dormir, desce para comer algo no bar. Para não ter erro, ela pede sempre o mesmo sanduíche de presunto e queijo e depois sobe para seus aposentos. Até que, certa vez, um homem a convida para uma bebida. E, depois do primeiro gole de seu gim com gelo e soda, sentindo-se atrevida, alegre, capaz de tudo ― inclusive de se despir de suas amarras conjugais, esquecendo momentaneamente marido e filhos ―, ela cede aos avanços do desconhecido e o leva para seu quarto.')">
+        <img src="https://m.media-amazon.com/images/I/81S3NIKIc6L._AC_UL320_.jpg" alt="Em Agosto Nos Vemos" class="book-cover">
+        <h3>Em Agosto Nos Vemos</h3>
+        <div class="discount">31% off</div>
+        <p class="price"><span class="original">R$ 64,90</span> R$ 44,83</p>
+    </div>
+
+    <div class="book" onclick="openBookModal('A Geração Ansiosa', 'Jonathan Haidt', 74.90, 40.82, 'As crianças e os adolescentes estão em perigo. Desde o início dos anos 2010, as taxas de depressão, ansiedade e outros transtornos mentais têm crescido vertiginosamente nesses grupos. Em A geração ansiosa , o psicólogo social Jonathan Haidt explica as causas dessa epidemia e defende uma infância longe das telas.')">
+        <img src="https://m.media-amazon.com/images/I/415ddO2AaLL._SY445_SX342_.jpg" alt="A Geração Ansiosa" class="book-cover">
+        <h3>A Geração Ansiosa</h3>
+        <div class="discount">46% off</div>
+        <p class="price"><span class="original">R$ 74,90</span> R$ 40,82</p>
+    </div>
+
+    <div class="book" onclick="openBookModal('O Poder do Hábito', 'Charles Duhigg', 89.90, 46.92, 'Como nossos hábitos moldam nossas vidas.')">
+        <img src="https://m.media-amazon.com/images/I/51Pw06uU8FL._SY445_SX342_.jpg" alt="O Poder do Hábito" class="book-cover">
+        <h3>O Poder do Hábito</h3>
+        <div class="discount">48% off</div>
+        <p class="price"><span class="original">R$ 89,90</span> R$ 46,92</p>
+    </div>
+
+    <div class="book" onclick="openBookModal('Essencialismo', 'Greg McKeown', 59.90, 39.83, 'Aprenda a focar no essencial e a reduzir a sobrecarga.')">
+        <img src="https://m.media-amazon.com/images/I/41-xN92FD7L._SY445_SX342_.jpg" alt="Essencialismo" class="book-cover">
+        <h3>Essencialismo</h3>
+        <div class="discount">34% off</div>
+        <p class="price"><span class="original">R$ 59,90</span> R$ 39,83 </p>
+    </div>
+
+    <div class="book" onclick="openBookModal('Mindset: A Nova Psicologia do Sucesso', 'Carol S. Dweck', 84.90, 42.40, 'Uma abordagem revolucionária sobre a mentalidade de crescimento.')">
+        <img src="https://m.media-amazon.com/images/I/41suUFbw-eL._SY445_SX342_.jpg" alt="Mindset: A Nova Psicologia do Sucesso" class="book-cover">
+        <h3>Mindset: A Nova Psicologia do Sucesso</h3>
+        <div class="discount">50% off</div>
+        <p class="price"><span class="original">R$ 84,90</span> R$ 42,40</p>
+    </div>
+
+    <div class="book" onclick="openBookModal('A Pequena Sereia', 'Lily Murray', 69.90, 36.77, 'Reviva a magia de A Pequena Sereia no mais novo volume da série Clássico Disney, nesta belissima e coleccionável edição de luxo!')">
+        <img src="https://m.media-amazon.com/images/I/51ikBKq2vDL._SY445_SX342_.jpg" alt="A Pequena Sereia" class="book-cover">
+        <h3>A Pequena Sereia</h3>
+        <div class="discount">47% off</div>
+        <p class="price"><span class="original">R$ 69,90</span> R$ 36,77</p>
+    </div>
+
+    <div class="book" onclick="openBookModal('Os sete maridos de Evelyn Hugo', 'Taylor Jenkins Reid', 64.90, 25.14, 'Com todo o esplendor que só a Hollywood do século passado pode oferecer, esta é uma narrativa inesquecível sobre os sacrifícios que fazemos por amor, o perigo dos segredos e o preço da fama.')">
+        <img src="https://m.media-amazon.com/images/I/91yEPgRcELL._SY425_.jpg" alt="Os sete maridos de Evelyn Hugo" class="book-cover">
+        <h3>Os sete maridos de Evelyn Hugo</h3>
+        <div class="discount">61% off</div>
+        <p class="price"><span class="original">R$ 64,90</span> R$ 25,14</p>
+    </div>
+
+    <div class="book" onclick="openBookModal('A balada do felizes para nunca', ' Stephanie Garber', 69.80, 36.85, 'A aguardada continuação de Era uma vez um coração partido.')">
+        <img src="https://m.media-amazon.com/images/I/9151IATxxaL._SY425_.jpg" alt="A balada do felizes para nunca" class="book-cover">
+        <h3>A balada do felizes para nunca</h3>
+        <div class="discount">47% off</div>
+        <p class="price"><span class="original">R$ 69,80</span> R$ 36,85</p>
+    </div>
+
+    <div class="book" onclick="openBookModal('Mulher-maravilha', 'George Pérez', 274.90, 190.12, 'George Pérez foi o grande responsável por reimaginar a Mulher-Maravilha para um novo público depois da Crise nas Infinitas Terras. Recontando a origem da Princesa Amazon, a fase de Pérez permanece muito aclamada até hoje, e conta com a colaboração de outros talentos da Editora das Lendas, como os roteiristas Greg Potter e Len Wein e o arte-finalista Bruce D. Patterson. Esta luxuosa edição Omnibus de 640 páginas reúne todo o período ilustrado pelo artista desse clássico dos anos 1980.')">
+        <img src="https://m.media-amazon.com/images/I/71pS7d4IxrL._SY425_.jpg" alt="Mulher-maravilha" class="book-cover">
+        <h3>Mulher-maravilha por George Pérez (omnibus)</h3>
+        <div class="discount">31% off</div>
+        <p class="price"><span class="original">R$ 274,90</span> R$ 190,12</p>
+    </div>
+
+    <div class="book" onclick="openBookModal('Um defeito de cor', 'Ana Maria Gonçalves', 119.90, 61.83, 'Livro que inspirou o samba enredo da Portela, no carnaval de 2024.')">
+        <img src="https://m.media-amazon.com/images/I/71xdtZUc5cL._SY425_.jpg" alt="Um defeito de cor" class="book-cover">
+        <h3>Um defeito de cor</h3>
+        <div class="discount">48% off</div>
+        <p class="price"><span class="original">R$ 119,90</span> R$ 61,83</p>
+    </div>    
+
+    <div class="book" onclick="openBookModal('Corpo de baile: box', 'João Guimarães Rosa', 199.00, 89.90, 'Em 1956, dez anos após sua estreia na literatura, João Guimarães Rosa lançou a obra Corpo de Baile em 2 volumes com 7 novelas, que mais tarde iriam ser distribuídos em 3 volumes. Agora, a Global Editora junta todo o conteúdo de Corpo de Baile em um box com arte exclusiva, além de todos os livros contarem com novo projeto gráfico, capas e textos de apoio por renomados especialista.')">
+        <img src="https://m.media-amazon.com/images/I/817hyWWLl6L._SY425_.jpg" alt="João Guimarães Rosa - Corpo de baile: box" class="book-cover">
+        <h3>João Guimarães Rosa - Corpo de baile: box com 3 volumes</h3>
+        <div class="discount">55% off</div>
+        <p class="price"><span class="original">R$ 199,00</span> R$ 89,90</p>
+    </div>
+
+    <div class="book" onclick="openBookModal('The Beauty of Darkness', ' Mary Pearson', 79.90, 43.37, 'A trilogia Crônicas de Amor e Ódio chega ao fim de maneira arrasadora. Iniciada em The Kiss of Deception, a série encantou os fãs de fantasia - e conquistou os corações dos brasileiros.A história de Lia inspirou muitos leitores a embarcarem em uma jornada extraordinária repleta de ação, romance, mistérios e autoconhecimento, em um universo deslumbrante criado pela premiada escritora Mary E. Pearson, onde o poder feminino é a força motriz capaz de mudar e fazer toda a diferença no novo mundo em construção.Aflitos com os acontecimentos do segundo volume, The Heart of Betrayal, que apresentou uma trama mais sombria, repleta de segredos e intrigas, os leitores imploraram pela conclusão da série e a Caveirinha acelerou a produção de THE BEAUTY OF DARKNESS.')">
+        <img src="https://m.media-amazon.com/images/I/710w+heBlKL._SY425_.jpg" alt="The Beauty of Darkness" class="book-cover">
+        <h3>The Beauty of Darkness - Crônicas de Amor e Ódio - Vol. 3</h3>
+        <div class="discount">46% off</div>
+        <p class="price"><span class="original">R$ 79,90</span> R$ 43,37</p>
+    </div>
+
+    <div class="book" onclick="openBookModal('Love So Pure', ' Plan B', 79.90, 29.62, 'É fácil achar uma transa quando você é um garçom bonito e atrevido que trabalha em um bar gay popular. Esse estilo de vida combina muito bem com Jihyeon, já que ele adora encontros casuais sem qualquer intimidade... Isso até ele conhecer Yohan - seu colega de classe grande e assustador, mas que na verdade é um amor de coração puro.')">
+        <img src="https://m.media-amazon.com/images/I/81+SFH-Bj0L._SY425_.jpg" alt="Love So Pure" class="book-cover">
+        <h3>Love So Pure: Volume 1</h3>
+        <div class="discount">63% off</div>
+        <p class="price"><span class="original">R$ 79,90</span> R$ 29,62</p>
+    </div>
+
+    <div class="book" onclick="openBookModal('Trocas macabras', 'Stephen King', 139.90, 70.19, 'Após anos esgotado no Brasil, Trocas macabras volta às livrarias como parte da Biblioteca Stephen King, coleção de clássicos do mestre do terror em edição especial, com capa dura e conteúdo extra.')">
+        <img src="https://m.media-amazon.com/images/I/41THG7S6SeL._SY445_SX342_.jpg" alt="Trocas macabras" class="book-cover">
+        <h3>Trocas macabras: Coleção Biblioteca Stephen King</h3>
+        <div class="discount">50% off</div>
+        <p class="price"><span class="original">R$ 139,90</span> R$ 70,19</p>
+    </div>
+
+    <div class="book" onclick="openBookModal('Infelizmente sua', ' Tessa Bailey', 59.90, 32.12, 'Em nova comédia romântica da autora de Aconteceu naquele verão , Natalie e August não se suportam, mas precisam fazer o impensável: casar um com outro.')">
+        <img src="https://m.media-amazon.com/images/I/41nhnpDVwlL._SY445_SX342_.jpg" alt="Infelizmente sua" class="book-cover">
+        <h3>Infelizmente sua</h3>
+        <div class="discount">46% off</div>
+        <p class="price"><span class="original">R$ 59,90</span> R$ 32,12</p>
+    </div>
+
+    <div class="book" onclick="openBookModal('O livro das virtudes para crianças', 'William Bennett', 69.90, 54.00, 'O livro das virtudes para crianças é uma jornada mágica e inspiradora que reúne pais e filhos em uma aventura de valores e ensinamentos intemporais.')">
+        <img src="https://m.media-amazon.com/images/I/51Qp3GPT7qL._SR240,220_.jpg" alt="O livro das virtudes para crianças" class="book-cover">
+        <h3>O livro das virtudes para crianças</h3>
+        <div class="discount">23% off</div>
+        <p class="price"><span class="original">R$ 69,90</span> R$ 54,00</p>
+    </div>
+    
+    <div class="book" onclick="openBookModal('#umdiasemreclamar: Descubra por que a gratidão pode mudar a sua vida', 'Davi Lago', 49.90, 19.90, 'Quantas vezes você reclamou de algo hoje? Este livro lhe propõe o seguinte desafio: passe um dia (24 horas) sem reclamar.')">
+        <img src="https://m.media-amazon.com/images/I/41+LUvzc6WL._SR480,440_.jpg" alt="#umdiasemreclamar" class="book-cover">
+        <h3>#umdiasemreclamar: Descubra por que a gratidão pode mudar a sua vida</h3>
+        <div class="discount">60% off</div>
+        <p class="price"><span class="original">R$ 49,90</span> R$ 19,90</p>
+    </div>
+    
+    <div class="book" onclick="openBookModal('Como fazer amigos e influenciar pessoas', 'Dale Carnegie', 59.90, 28.00, 'Um dos maiores clássicos de todos os tempos, Como fazer amigos e influenciar pessoas é considerado a Bíblia dos relacionamentos interpessoais.')">
+        <img src="https://m.media-amazon.com/images/I/41RTbO7BvbL._SR480,440_.jpg" alt="Como fazer amigos e influenciar pessoas" class="book-cover">
+        <h3>Como fazer amigos e influenciar pessoas</h3>
+        <div class="discount">53% off</div>
+        <p class="price"><span class="original">R$ 59,90</span> R$ 28,00</p>
+    </div>
+    
+    <div class="book" onclick="openBookModal('A empregada: Bem-vinda à família', 'Freida McFadden', 59.90, 25.44, 'Todos os dias, Millie limpa a casa de Nina e Andrew Winchester. Prepara refeições deliciosas para a família toda antes de poder se recolher e enfim comer o próprio jantar.')">
+        <img src="https://m.media-amazon.com/images/I/41ziC4vXKBL._SY445_SX342_.jpg" alt="A empregada: Bem-vinda à família" class="book-cover">
+        <h3>A empregada: Bem-vinda à família</h3>
+        <div class="discount">57% off</div>
+        <p class="price"><span class="original">R$ 59,90</span> R$ 25,44</p>
+    </div>
+    
+    <div class="book" onclick="openBookModal('Confissões de Santo Agostinho', 'Agostinho de Hipona', 59.90, 33.16, 'Neste livro autobiográfico, Santo Agostinho registrou suas reflexões, aproximando as pessoas de Deus e refletindo sobre suas aspirações espirituais.')">
+        <img src="https://m.media-amazon.com/images/I/51Q7-15CoVL._SY445_SX342_.jpg" alt="Confissões de Santo Agostinho" class="book-cover">
+        <h3>Confissões de Santo Agostinho</h3>
+        <div class="discount">45% off</div>
+        <p class="price"><span class="original">R$ 59,90</span> R$ 33,16</p>
+    </div> 
+</div>   
+</section>
+
+  
+<div id="bookModal" class="modal">
+    <div class="modal-content">
+        <span id="closeBookModal" class="close">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <p>Autor: <span id="modalAuthor"></span></p>
+        <p>Preço Original: <span id="modalOriginalPrice"></span></p>
+        <p>Preço com Desconto: <span id="modalDiscountedPrice"></span></p>
+        <p>Desconto: <span id="modalDiscount"></span></p>
+        <p>Sinopse: <span id="modalSynopsis"></span></p>
+    </div>
+</div>
+
+                <!-- Rodapé -->
+    <footer>
+        <div class="share-buttons">
+            <h3>Compartilhe este conteúdo</h3>
+            
+            <!-- Botão para Facebook -->
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.seusite.com" target="_blank">
+                <i class="fab fa-facebook-square share-icon"></i>
+            </a>
+        
+            <!-- Botão para X -->
+        <a href="https://x.com/intent/tweet?url=https://www.seusite.com&text=Olha%20isso!" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </a>
+        
+            <!-- Botão para WhatsApp -->
+            <a href="https://api.whatsapp.com/send?text=Olha%20isso!%20https://www.seusite.com" target="_blank">
+                <i class="fab fa-whatsapp share-icon"></i>
+            </a>
+        
+            <!-- Botão para LinkedIn -->
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.seusite.com&title=Confira%20este%20site" target="_blank">
+                <i class="fab fa-linkedin share-icon"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 Bookfy. Todos os direitos reservados.</p>
+    </footer>
+        <script src="script.js"></script> <!-- Referência ao arquivo JS externo -->
+</body>
+</html>

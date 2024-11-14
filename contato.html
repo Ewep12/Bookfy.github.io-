@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookfy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<head>
+    <!-- Link para Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Bookfy</h1>
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produtos.html">Livros</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>            
+             <!-- Contêiner para os botões -->
+            <div class="buttons-container">
+                <!-- Botão Login -->
+                <button id="loginBtn">Entrar</button>
+                <!-- Botão Cadastro -->
+                <button id="registerBtn">Cadastrar</button>
+            </div>
+        </nav>
+        <button id="toggleDarkMode">🌙</button>
+    </header>
+
+<!-- Modal de login -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeLoginModal">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Entrar</button>
+        </form>
+        <div class="modal-links">
+            <p>Esqueceu a sua senha? <a href="#" id="forgotPasswordLink">Recupere aqui</a></p>
+            <p>Novo por aqui? <a href="#" id="registerLink">Cadastre-se</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Cadastro -->
+<div id="registerPage" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeRegisterModal">&times;</span>
+        <h2>Cadastro</h2>
+        <form id="registerForm">
+            <label for="username">Nome de Usuário:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirmar Senha:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <button type="submit">Cadastrar</button>
+            <div class="modal-links">
+                <p>Já tem uma conta? <a href="#" id="loginLink">Entre aqui</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--Modal recuperar senha-->
+<div id="forgotPasswordModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeForgotPasswordModal">&times;</span>
+        <h2>Recuperar Senha</h2>
+        <form id="forgotPasswordLinkForm">
+            <label for="emailRecovery">Digite seu e-mail:</label>
+            <input type="email" id="emailRecovery" name="emailRecovery" required>
+            <button type="submit">Enviar Link de Recuperação</button>
+        </form>
+    </div>
+</div>
+
+    <main>
+        <section id="contato">
+            <h2>Entre em contato conosco</h2>
+            <p>Tem alguma dúvida ou sugestão? Preencha o formulário abaixo ou entre em contato pelos meios abaixo:</p>
+    
+            <!-- Informações de Contato -->
+            <div class="contato-info">
+                <p><strong>Endereço:</strong> Av. Adjar da Silva Casé, 800 - Indianópolis, Caruaru - PE, 55024-740</p>
+                <p><strong>Telefone:</strong> <a href="tel:+5581993808920">(81) 99380-8920</a></p>
+                <p><strong>E-mail:</strong> <a href="cep@unifavip.edu.br">cep@unifavip.edu.br</a></p>
+                <p><strong>Redes Sociais:</strong></p>
+                <ul class="social-links">
+                    <li><a href="https://www.Instagram.com/computacaounifavip_/" target="_blank">Instagram</a></li>
+                    <li><a href="https://x.com/wydenoficial" target="_blank">Twitter</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Entre em contato conosco preenchendo o formulário abaixo:</p>
+            <form class="contact-form">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" placeholder="Seu nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" placeholder="Seu email" required>
+
+                <label for="telefone">Número de Contato:</label>
+               <input type="telefone" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" required>
+
+                <label for="assunto">Assunto:</label>
+                <input type="text" name="assunto" placeholder="Qual o assunto?" required>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem" required></textarea>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+
+      
+
+            <!-- Mapa de Localização (Google Maps) -->
+           <div id="mapa">
+                <h3>Como Chegar</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.0853201200343!2d-35.955301525870844!3d-8.294307983422904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7a98be8cf3157dd%3A0x98a0a3ecad4be817!2sCentro%20Universit%C3%A1rio%20UniFavip%20-%20Wyden%20-%20Entrada%20Principal!5e0!3m2!1spt-BR!2sbr!4v1731270031628!5m2!1spt-BR!2sbr" 
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="share-buttons">
+            <h3>Compartilhe este conteúdo</h3>
+            
+            <!-- Botão para Facebook -->
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.seusite.com" target="_blank">
+                <i class="fab fa-facebook-square share-icon"></i>
+            </a>
+        
+            <!-- Botão para X -->
+        <a href="https://x.com/intent/tweet?url=https://www.seusite.com&text=Olha%20isso!" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </a>
+        
+            <!-- Botão para WhatsApp -->
+            <a href="https://api.whatsapp.com/send?text=Olha%20isso!%20https://www.seusite.com" target="_blank">
+                <i class="fab fa-whatsapp share-icon"></i>
+            </a>
+        
+            <!-- Botão para LinkedIn -->
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.seusite.com&title=Confira%20este%20site" target="_blank">
+                <i class="fab fa-linkedin share-icon"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 Bookfy. Todos os direitos reservados.</p>
+    </footer>
+        <script src="script.js"></script> <!-- Referência ao arquivo JS externo -->
+</body>
+</html>

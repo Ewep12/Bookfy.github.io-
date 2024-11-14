@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookfy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<head>
+    <!-- Link para Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Bookfy</h1>
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produtos.html">Livros</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>            
+             <!-- Contêiner para os botões -->
+            <div class="buttons-container">
+                <!-- Botão Login -->
+                <button id="loginBtn">Entrar</button>
+                <!-- Botão Cadastro -->
+                <button id="registerBtn">Cadastrar</button>
+            </div>
+        </nav>
+        <button id="toggleDarkMode">🌙</button>
+    </header>
+
+<!-- Modal de login -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeLoginModal">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Entrar</button>
+        </form>
+        <div class="modal-links">
+            <p>Esqueceu a sua senha? <a href="#" id="forgotPasswordLink">Recupere aqui</a></p>
+            <p>Novo por aqui? <a href="#" id="registerLink">Cadastre-se</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Cadastro -->
+<div id="registerPage" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeRegisterModal">&times;</span>
+        <h2>Cadastro</h2>
+        <form id="registerForm">
+            <label for="username">Nome de Usuário:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirmar Senha:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <button type="submit">Cadastrar</button>
+            <div class="modal-links">
+                <p>Já tem uma conta? <a href="#" id="loginLink">Entre aqui</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--Modal recuperar senha-->
+<div id="forgotPasswordModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeForgotPasswordModal">&times;</span>
+        <h2>Recuperar Senha</h2>
+        <form id="forgotPasswordLinkForm">
+            <label for="emailRecovery">Digite seu e-mail:</label>
+            <input type="email" id="emailRecovery" name="emailRecovery" required>
+            <button type="submit">Enviar Link de Recuperação</button>
+        </form>
+    </div>
+</div>
+
+<section id="sobre">
+    <h1>Sobre a Bookfy</h1>
+    <p>A <strong>Bookfy</strong> é mais do que apenas um site de livros; somos uma comunidade apaixonada por literatura, dedicada a ajudar você a descobrir novas histórias e explorar diferentes mundos por meio da leitura. Nosso catálogo conta com obras de todos os gêneros, desde clássicos atemporais até os lançamentos mais esperados. Se você é fã de livros, você encontrou o seu lugar.</p>
+
+    <h2>Nossa Missão</h2>
+    <p>Na <strong>Bookfy</strong>, acreditamos que o acesso ao conhecimento e à diversão que os livros proporcionam deve ser fácil, rápido e acessível a todos. Nossa missão é conectar você aos melhores livros, oferecendo links para as melhores ofertas e preços no mercado. Tudo para que a sua jornada literária seja mais acessível e prazerosa.</p>
+
+    <h2>Nossa Visão</h2>
+    <p>Queremos criar um futuro onde a leitura seja parte do cotidiano de todos, onde a busca pelo livro perfeito seja simples e, acima de tudo, inspiradora. Nosso objetivo é fazer com que mais pessoas se apaixonem por livros e descubram o prazer de ler com mais facilidade, sem complicações. Acreditamos que cada livro tem o poder de transformar vidas e queremos garantir que você tenha as melhores opções à sua disposição.</p>
+
+    <h2>Entre em Contato</h2>
+    <p>Tem alguma dúvida ou deseja saber mais sobre o que fazemos? Estamos aqui para ajudar! <a href="contato.html">Entre em contato conosco</a> e vamos conversar sobre como podemos tornar a sua experiência literária ainda mais incrível!</p>
+</section>
+
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="share-buttons">
+            <h3>Compartilhe este conteúdo</h3>
+            
+            <!-- Botão para Facebook -->
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.seusite.com" target="_blank">
+                <i class="fab fa-facebook-square share-icon"></i>
+            </a>
+        
+            <!-- Botão para X -->
+        <a href="https://x.com/intent/tweet?url=https://www.seusite.com&text=Olha%20isso!" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </a>
+        
+            <!-- Botão para WhatsApp -->
+            <a href="https://api.whatsapp.com/send?text=Olha%20isso!%20https://www.seusite.com" target="_blank">
+                <i class="fab fa-whatsapp share-icon"></i>
+            </a>
+        
+            <!-- Botão para LinkedIn -->
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.seusite.com&title=Confira%20este%20site" target="_blank">
+                <i class="fab fa-linkedin share-icon"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 Bookfy. Todos os direitos reservados.</p>
+    </footer>
+        <script src="script.js"></script> <!-- Referência ao arquivo JS externo -->
+</body>
+</html>
